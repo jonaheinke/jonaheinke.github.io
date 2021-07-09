@@ -16,7 +16,7 @@
 
 @media (orientation: portrait) {
 	:root {
-		--side-padding: 3rem;
+		--side-padding: 0rem;
 	}
 }
 
@@ -72,6 +72,7 @@ a:not(:focus) {
 /* --------------- header --------------- */
 header {
 	box-shadow: 0 0 10px 0 var(--grey);
+	font-weight: bolder;
 
 	display: flex;
 	flex-wrap: wrap;
