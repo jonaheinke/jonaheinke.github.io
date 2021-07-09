@@ -1,0 +1,33 @@
+canvas {
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	width: 2560px;
+	height: 200px;
+	padding: 0;
+	opacity: 0.04;
+}
+
+div#heading {
+	height: 200px;
+	background-color: var(--blue-light);
+	position: relative;
+	z-index: 1;
+	font-size: 1.4rem;
+}
+
+/* --------------- aside ---------------- */
+aside {
+	background-color: var(--pink);
+}
+
+@media (orientation: landscape) {
+	aside {
+		position: absolute;
+		z-index: 3; /*TODO: Das hier macht bisher nichts. Audiocircles liegen über dem Sendeplan.*/
+		top: 1.5rem;
+		right: 6rem;
+		height: 500px;
+		width: 300px;
+	}
+}
