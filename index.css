@@ -10,6 +10,9 @@ canvas {
 
 div#heading {
 	height: 200px;
+	background-image: url('canvas.png');
+	background-repeat: repeat-x;
+	background-position-y: bottom;
 	background-color: var(--blue-light);
 	position: relative;
 	z-index: 1;

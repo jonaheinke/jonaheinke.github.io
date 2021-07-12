@@ -7,16 +7,18 @@
 		<!--TODO: weitere Meta Infos-->
 		<link rel="stylesheet" href="main.css">
 		<link rel="stylesheet" href="index.css">
-		<script src="audiocircles.js"></script>
+		<!--<script src="audiocircles.js"></script>-->
 
 		<base href="http://www.radio-unicc.de"><!--TODO: Kann in Live-Version wahrscheinlich auskommentiert werden.-->
 	</head>
 	<body>
 		<!--Logo, Motto, Facebook, Instagram, Mitmachen, Kontakt-->
-		<header class="layout-full">
+		<header class="layout-full noselect">
 			<div>
-				<a href="" tabindex="-1"><img src="/fileadmin/templates/images/logo.png" alt="Logo von Radio UNiCC"></a>
-				einzig, nicht artig...
+				<a href="" tabindex="-1">
+					<img src="/fileadmin/templates/images/logo.png" alt="Logo von Radio UNiCC">
+					einzig, nicht artig...
+				</a>
 			</div>
 			<div style="text-align: center;">
 				<a href="https://www.facebook.com/radiounicc" tabindex="-1">FB</a>
@@ -73,12 +75,13 @@
 		</nav>
 
 		<!--Das muss noch in eine SVG Datei gebracht werden. Kein Browser sollte wirklich versuchen, den Hintergrund so zu rendern. XD-->
-		<canvas id="audiocircles" width="2560" height="200"></canvas>
+		<!--<canvas id="audiocircles" width="2560" height="200"></canvas>-->
+
 		<!--Überschriften-->
 		<div id="heading" class="layout-center">
 			<h1>Unabhängig - bunt - UNiCC</h1>
 			<h2>Dein Radiosender aus Chemnitz</h2>
-
+			
 			<!--Sendeplan-->
 			<aside class="noselect">
 				aktueller Sendeplan<br><a href="/sendeplan/">Kompletter Sendeplan</a>
@@ -115,7 +118,8 @@
 				document.getElementById("year").innerHTML = new Date().getFullYear();
 			</script>
 		</footer>
-
+		
+		<!--Audioplayer-->
 		<div id="player">Das ist der Audioplayer.</div>
 	</body>
 </html>

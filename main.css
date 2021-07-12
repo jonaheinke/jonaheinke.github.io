@@ -21,6 +21,14 @@
 }
 
 /* --------- Nuetzliche Klassen --------- */
+.center {
+	display: block;
+}
+
+.center > * {
+	margin: 0 auto;
+}
+
 /*Hintergrundfarbe geht über volle Breite*/
 .layout-full {
 	box-sizing: content-box;
@@ -103,7 +111,7 @@ nav input {
 	margin: 0.5rem;
 }
 
-nav div a {
+nav a {
 	display: block;
 	box-sizing: border-box;
 	width: 100%;
@@ -113,6 +121,10 @@ nav div a {
 
 nav > *:first-child a {
 	margin-left: 0;
+}
+
+nav > * {
+	position: relative;
 }
 
 nav > * a:hover,
@@ -130,16 +142,23 @@ nav ul {
 	position: absolute;
 	z-index: 5;
 	margin: 0;
-	margin-top: 25px;
+	left: 50%;
+	transform: translateX(-50%);
 	padding: 0;
+	padding-top: 2rem;
 
 	visibility: collapse;
 	opacity: 0;
-	transition: visibility 0s, opacity 0.3s, margin 0.3s;
+	transition: visibility 0s, opacity 0.4s, padding 0.3s;
 	transition-timing-function: ease-out;
 
-	background-color: var(--black);
 	list-style-type: none;
+}
+
+@media (prefers-reduced-motion) {
+	nav ul {
+		transition-duration: 0ms;
+	}
 }
 
 nav div:hover > a + ul,
@@ -151,6 +170,14 @@ nav div.currentpage > a + ul {
 	visibility: visible;
 	opacity: 1;
 	margin: 0;
+	padding: 4rem;
+	padding-top: 0;
+}
+
+nav ul li {
+	background-color: var(--black);
+	white-space: nowrap;
+	text-align: center;
 }
 
 /* --------------- footer --------------- */

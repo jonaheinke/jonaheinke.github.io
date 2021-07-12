@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	const spacing = 25;
 	const radius = 7.5;
 	const height = 200;
-	for(let i = 0; i < 2560 / spacing; i++) {
+	for(let i = 0; i < circles.length; i++) {
+	//for(let i = 0; i < 2560 / spacing; i++) {
 		let pos = i % circles.length;
 		for(let j = 0; j < circles[pos]; j++) {
 			context.beginPath();
