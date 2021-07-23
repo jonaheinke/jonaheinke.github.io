@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-		<title>Radio UNiCC - Home</title>
+		<title>Radio UNiCC - Musikrezensionen</title>
 		<!--TODO: weitere Meta Infos-->
 		<link rel="stylesheet" href="main.css">
-		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="category.css">
 	</head>
 	<body>
 		<!--Logo, Motto, Facebook, Instagram, Mitmachen, Kontakt-->
@@ -27,13 +27,13 @@
 
 		<!--Menüleiste-->
 		<nav class="layout-center noselect">
-			<div class="currentpage">
+			<div>
 				<a href="index.html">Home</a>
 			</div>
-			<div>
+			<div class="currentpage">
 				<a href="category.html">News</a>
 				<ul>
-					<li><a href="category.html">Musik</a></li>
+					<li class="currentpage"><a href="category.html">Musik</a></li>
 					<li><a href="category.html">Kultur</a></li>
 					<li><a href="category.html">Literatur & Film</a></li>
 					<li><a href="category.html">Interviews</a></li>
@@ -73,37 +73,48 @@
 
 		<!--Überschriften-->
 		<div id="heading" class="layout-center">
-			<h1>Unabhängig - bunt - UNiCC</h1>
-			<h2>Dein Radiosender aus Chemnitz</h2>
-			
-			<!--Sendeplan-->
-			<aside class="noselect">
-				aktueller Sendeplan<br><a href="http://www.radio-unicc.de/sendeplan/">Kompletter Sendeplan</a>
-			</aside>
+			<h1>Aktuelle Beiträge:</h1>
+			<h1>Musik</h1>
 		</div>
 
 		<!--Inhalt-->
-		<main>
-			<section class="layout-center">
-				<h1>Top-aktuell</h1>
-				<article>Artikel 1</article>
-				<article>Artikel 2</article>
-				<article>Artikel 3</article>
-			</section>
-			<section class="layout-center">
-				<h1>Themen</h1>
-				<article>Musik</article>
-				<article>Kultur</article>
-				<article>Events</article>
-				<article>Interviews</article>
-				<article>Kommentar</article>
-			</section>
-			<section class="layout-center">
-				<h1>UNiCC auf Instagram</h1>
-				<article>Post 1</article>
-				<article>Post 2</article>
-				<article>Post 3</article>
-			</section>
+		<main class="layout-center">
+			<article><a href="article.html">
+				<img src="http://www.radio-unicc.de/fileadmin/_processed_/5/7/csm_Fischer_-_Vom_Staunen_in_der_Welt_52ee0770de.jpg">
+				<div id="author">Anja Otto</div>
+				<h2>Ernst Peter Fischer: Vom Staunen in der Welt. Was Wissenschaft möglich macht - und was nicht</h2>
+				<div id="description">Unsere heutige Buchvorstellung bringt euch ein Sachbuch näher, das euch Einblicke in die Wissenschaftsgeschichte bietet und zugleich auf die künftigen Herausforderungen der Wissenschaft und der Gesellschaft aufmerksam macht.</div>
+			</a></article>
+			<article><a href="article.html">
+				<img src="http://www.radio-unicc.de/fileadmin/_processed_/2/d/csm_Lacrimosa-2021-07-10-alsha-_G2_3882_9811614116.jpg">
+				<div id="author">Alexandra Shaburova</div>
+				<h2>Tilo Wolff: "Ein Jahr auf Euch zu warten - das hat sich gelohnt!"</h2>
+				<div id="description">Der 10.07. war ein besonderer Tag für Lacrimosa: das erste und das einzige Live-Konzert in Deutschland seit über einem Jahr und der Geburtstag von Sänger Tilo Wolff. Wir, Radio UNiCC, waren für Euch im Wasserschloss Klaffenbach dabei und feierten mit.</div>
+			</a></article>
+			<article><a href="article.html">
+				<img src="http://www.radio-unicc.de/fileadmin/_processed_/1/0/csm_Foto_Webseite_b19e111d81.jpg">
+				<div id="author">Anika Weber</div>
+				<h2>Podcast: Gedanken um Mitternacht - Folge 24: Hot 100 List of Things To Do Before Death</h2>
+				<div id="description">In der heutigen Podcastfolge dreht sich alles um die Bucket List mit Dingen, die ein jeder vor seinem Tod noch machen sollte. Anika geht mit ihrem heutigen Gast Lydia DIE Liste schlecht hin durch.</div>
+			</a></article>
+			<article><a href="article.html">
+				<img src="http://www.radio-unicc.de/fileadmin/_processed_/5/3/csm_crunchtime_rechteck_9546bba555.png">
+				<div id="author">Jona und Wieland</div>
+				<h2>Crunchtime Episode 21: Alle Themen wiederholen sich</h2>
+				<div id="description">Privatsphäre</div>
+			</a></article>
+			<article><a href="article.html">
+				<img src="http://www.radio-unicc.de/fileadmin/_processed_/5/3/csm_crunchtime_rechteck_9546bba555.png">
+				<div id="author">Jona und Wieland</div>
+				<h2>Crunchtime Episode 21: Alle Themen wiederholen sich</h2>
+				<div id="description">TikTok</div>
+			</a></article>
+			<article><a href="article.html">
+				<img src="http://www.radio-unicc.de/fileadmin/_processed_/5/3/csm_crunchtime_rechteck_9546bba555.png">
+				<div id="author">Jona und Wieland</div>
+				<h2>Crunchtime Episode 21: Alle Themen wiederholen sich</h2>
+				<div id="description">Crypto</div>
+			</a></article>
 		</main>
 
 		<!--Fußzeile mit Copyright, Datenschutz, etc.-->

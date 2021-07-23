@@ -2,7 +2,9 @@
 
 So sieht aktuell die Website aus:
 
-![](view.jpg)
+![](screenshots/index.jpg)
+![](screenshots/category.jpg)
+![](screenshots/article.jpg)
 
 ## Eigene Version aufsetzen
 
