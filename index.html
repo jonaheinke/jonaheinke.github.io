@@ -1,4 +1,5 @@
 <!--Nachbildung von https://alexandrashaburova.wixsite.com/my-site -->
+<!--HTML Roles: https://www.w3.org/TR/2014/REC-wai-aria-20140320/roles#role_definitions -->
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -6,13 +7,16 @@
 		<title>Radio UNiCC - Home</title>
 		<!--TODO: weitere Meta Infos-->
 		<link rel="stylesheet" href="main.css">
-		<link rel="stylesheet" href="index.css">
+		<script src="dynamic_content.js"></script>
+		<script src="sendeplan.js"></script>
+
+		<link rel="stylesheet" id="css_current_page" href="index.css">
 	</head>
 	<body>
 		<!--Logo, Motto, Facebook, Instagram, Mitmachen, Kontakt-->
 		<header class="layout-full noselect">
 			<div id="logo">
-				<a href="index.html" tabindex="-1">
+				<a href="/" tabindex="-1">
 					<img src="http://www.radio-unicc.de/fileadmin/templates/images/logo.png" alt="Logo von Radio UNiCC">
 					einzig, nicht artig...
 				</a>
@@ -28,7 +32,7 @@
 		<!--Menüleiste-->
 		<nav class="layout-center noselect">
 			<div class="currentpage">
-				<a href="index.html">Home</a>
+				<a href="/">Home</a>
 			</div>
 			<div>
 				<a href="category.html">News</a>
@@ -78,19 +82,37 @@
 			
 			<!--Sendeplan-->
 			<aside class="noselect">
-				aktueller Sendeplan<br><a href="http://www.radio-unicc.de/sendeplan/">Kompletter Sendeplan</a>
+				<table cellspacing="0">
+					<thead>
+						<tr>
+							<th>Heute</th>
+							<th id="sendeplan_datum">&lt; Datum &gt;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td>Jetzt</td><td>Just Music</td></tr>
+						<tr><td>18-19:00</td><td>Just Music</td></tr>
+						<tr><td>19-20:00</td><td>Wunschbox</td></tr>
+						<tr><td>20-21:00</td><td>MAGic</td></tr>
+					</tbody>
+				</table>
+				<a href="http://www.radio-unicc.de/sendeplan/">Kompletter Sendeplan</a>
+				<h3>Lieder-Lupe</h3>
+				<img>
+				<span></span>
+				<span></span>
 			</aside>
 		</div>
 
 		<!--Inhalt-->
-		<main>
-			<section class="layout-center">
+		<main class="layout-center">
+			<section>
 				<h1>Top-aktuell</h1>
 				<article>Artikel 1</article>
 				<article>Artikel 2</article>
 				<article>Artikel 3</article>
 			</section>
-			<section class="layout-center">
+			<section>
 				<h1>Themen</h1>
 				<article>Musik</article>
 				<article>Kultur</article>
@@ -98,7 +120,7 @@
 				<article>Interviews</article>
 				<article>Kommentar</article>
 			</section>
-			<section class="layout-center">
+			<section>
 				<h1>UNiCC auf Instagram</h1>
 				<article>Post 1</article>
 				<article>Post 2</article>

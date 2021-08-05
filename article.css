@@ -15,7 +15,7 @@ main section#content {
 
 main section#sidebar {
 	flex: 0 0 auto;
-	background-color: var(--lightgrey);
+	background-color: var(--grey-light);
 	width: 200px;
 	padding: 1rem;
 }

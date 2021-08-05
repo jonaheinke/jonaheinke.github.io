@@ -22,7 +22,53 @@ div#heading {
 
 /* --------------- aside ---------------- */
 aside {
+	font-size: 1rem;
+}
+
+aside table {
+	width: 100%;
+	border: 0;
+}
+
+aside table thead {
+	background-color: var(--black);
+	color: var(--white);
+}
+
+aside table thead th {
+	padding: 0.5rem;
+}
+
+aside table tbody tr:first-child {
 	background-color: var(--pink);
+}
+
+aside table tbody tr {
+	background-color: var(--grey-light);
+}
+
+aside table tbody td {
+	padding: 1rem;
+}
+
+aside table tbody td:not(:first-child):before {
+	--lineheight: 1.5em;
+	content: "";
+	position: absolute;
+	margin-left: -1rem;
+	margin-top: calc((1em - var(--lineheight)) / 2);
+	width: 3px;
+	height: var(--lineheight);
+	background-color: var(--black);
+}
+
+aside table + a {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 1rem;
+	background-color: var(--blue-light);
+	text-align: center;
 }
 
 @media (orientation: landscape) {
@@ -46,7 +92,7 @@ main section {
 }
 
 main section:nth-child(2) {
-	background-color: var(--lightgrey);
+	background-color: var(--grey-light);
 }
 
 main section h1 {
