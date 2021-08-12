@@ -50,6 +50,8 @@ div#player-play label:hover {
 	cursor: pointer;
 }
 
+/*https://codepen.io/maude/pen/xLOVjM?editors=0100*/
+
 div#player-play label:before {
 	content: "";
 	position: absolute;
