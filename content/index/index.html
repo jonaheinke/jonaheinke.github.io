@@ -1,0 +1,248 @@
+<!--Nachbildung von https://alexandrashaburova.wixsite.com/my-site -->
+<!--HTML Roles: https://www.w3.org/TR/2014/REC-wai-aria-20140320/roles#role_definitions -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+		<title>Radio UNiCC - Home</title>
+		<!--TODO: weitere Meta Infos-->
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="nav.css">
+		<link rel="stylesheet" href="player.css">
+		<script src="dynamic_content.js"></script>
+		<script src="sendeplan.js"></script>
+
+		<link rel="stylesheet" id="css_current_page" href="index/index.css">
+	</head>
+	<body>
+		<!--Logo, Motto, Facebook, Instagram, Mitmachen, Kontakt-->
+		<header class="layout full noselect shadow">
+			<div class="layout center">
+				<div id="logo">
+					<a href="/" tabindex="-1">
+						<img src="http://www.radio-unicc.de/fileadmin/templates/images/logo.png" alt="Logo von Radio UNiCC">
+						einzig, nicht artig...
+					</a>
+				</div>
+				<div id="contact">
+					<a href="https://www.facebook.com/radiounicc" tabindex="-1"><img src="icons/facebook-logo.png"></a>
+					<a href="https://www.instagram.com/radiounicc" tabindex="-1"><img src="icons/instagram-logo.png"></a>
+					<a href="http://www.radio-unicc.de/mitmachen/" tabindex="-1">Mitmachen</a>
+					<a href="http://www.radio-unicc.de/kontakt/" tabindex="-1">Kontakt</a>
+				</div>
+			</div>
+		</header>
+
+		<!--Menüleiste-->
+		<nav class="layout center noselect">
+			<div class="currentpage">
+				<a href="/">Home</a>
+			</div>
+			<div>
+				<a href="category/category.html">News</a>
+				<ul>
+					<li><a href="category/category.html">Musik</a></li>
+					<li><a href="category/category.html">Kultur</a></li>
+					<li><a href="category/category.html">Literatur & Film</a></li>
+					<li><a href="category/category.html">Interviews</a></li>
+					<li><a href="category/category.html">Events</a></li>
+					<li><a href="category/category.html">Politik & Zeitgeschehen</a></li>
+					<li><a href="category/category.html">Kommentar</a></li>
+				</ul>
+			</div>
+			<div>
+				<a href="http://www.radio-unicc.de/sendeplan/">Sendungen</a>
+			</div>
+			<div>
+				<a href="show/show.html">Podcasts</a>
+				<ul>
+					<li><a href="show/show.html">Die Crunchtime</a></li>
+					<li><a href="show/show.html">Gedanken um Mitternacht</a></li>
+					<li><a href="show/show.html">Sascha & Medwedi</a></li>
+					<li><a href="show/show.html">Aus dem Hörsaal</a></li>
+					<li><a href="show/show.html">Lass Machen!</a></li>
+				</ul>
+			</div>
+			<div>
+				<a href="http://www.radio-unicc.de/sender/hoeren/">Über uns</a>
+				<ul>
+					<li><a href="http://www.radio-unicc.de/sender/historie/">Historie</a></li>
+					<li><a href="http://www.radio-unicc.de/sender/team/">Team</a></li>
+				</ul>
+			</div>
+			<form method="GET" action="https://www.google.com/search" style="margin-bottom: 0;">
+				<input type="hidden" name="sitesearch" value="radio-unicc.de">
+				<input name="q" type="search" placeholder="Suchen...">
+			</form>
+			<div>
+				<a href="/">Gewinnspiele</a>
+			</div>
+		</nav>
+
+		<!--Überschriften-->
+		<div id="heading" class="layout center">
+			<h1>Unabhängig - bunt - UNiCC</h1>
+			<h2>Dein Radiosender aus Chemnitz</h2>
+			<i>täglich zwischen 18 und 19 Uhr auf 102,7MHz<!--<br>in der Woche zwischen 7 und 23 Uhr--></i>
+			
+			<!--Sendeplan-->
+			<aside class="noselect shadow">
+				<table cellspacing="0">
+					<thead>
+						<tr>
+							<th>Heute</th>
+							<th id="sendeplan_datum">&lt; Datum &gt;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td>Jetzt</td><td>Just Music</td></tr>
+						<tr><td>18-19:00</td><td>OnAir</td></tr>
+						<tr><td>19-20:00</td><td>Wunschbox</td></tr>
+						<tr><td>20-21:00</td><td>MAGic</td></tr>
+					</tbody>
+				</table>
+				<a href="http://www.radio-unicc.de/sendeplan/">Kompletter Sendeplan</a>
+				<h3>Lieder-Lupe</h3>
+				<img>
+				<span></span>
+				<span></span>
+			</aside>
+		</div>
+
+		<!--Inhalt-->
+		<main class="layout center">
+			<section>
+				<h1>Top-aktuell</h1>
+				<article>Artikel 1</article>
+				<article>Artikel 2</article>
+				<article>Artikel 3</article>
+			</section>
+			<section id="topics" class="noselect">
+				<h1>Themen</h1>
+				<div>
+					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_50ff63c35ef64956894765f29fac3f88~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_50ff63c35ef64956894765f29fac3f88~mv2.webp');">
+						<span>Musik</span>
+					</a>
+					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_9f807c86958748ed816e7fa3edbfbe5a~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_9f807c86958748ed816e7fa3edbfbe5a~mv2.webp');">
+						<span>Kultur</span>
+					</a>
+					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_9f807c86958748ed816e7fa3edbfbe5a~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_9f807c86958748ed816e7fa3edbfbe5a~mv2.webp');">
+						<span>Literatur & Film</span>
+					</a>
+					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_86ec8d1f00544354994da376c515ddcd~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_86ec8d1f00544354994da376c515ddcd~mv2.webp');">
+						<span>Interviews</span>
+					</a>
+					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_7794b4a844cf4570aa03388e4df4d877~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_7794b4a844cf4570aa03388e4df4d877~mv2.webp');">
+						<span>Events</span>
+					</a>
+					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_86ec8d1f00544354994da376c515ddcd~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_86ec8d1f00544354994da376c515ddcd~mv2.webp');">
+						<span>Politik & Zeitgeschehen</span>
+					</a>
+					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_77484f6090594de8b1b6f0ba096fb5dc~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_77484f6090594de8b1b6f0ba096fb5dc~mv2.webp');">
+						<span>Kommentar</span>
+					</a>
+				</div>
+			</section>
+			<section>
+				<h1>UNiCC auf Instagram</h1>
+				<article>Post 1</article>
+				<article>Post 2</article>
+				<article>Post 3</article>
+			</section>
+		</main>
+
+		<!--Fußzeile mit Copyright, Datenschutz, etc.-->
+		<footer class="layout full noselect">
+			<div class="layout center">
+				© <span id="year">{{current_year}}</span> Radio UNiCC | 
+				<a href="http://www.radio-unicc.de/impressum/" target="_self">Impressum</a> | 
+				<a href="http://www.radio-unicc.de/datenschutz/" target="_self">Datenschutz</a> | 
+				<a href="http://www.radio-unicc.de/kontakt/" target="_self">Kontakt</a> | 
+				<a href="http://www.radio-unicc.de/admin/" target="_self">Admin</a>
+				<script>
+					document.getElementById("year").innerHTML = new Date().getFullYear();
+				</script>
+			</div>
+		</footer>
+		
+		<!--Audioplayer-->
+		<div id="player">
+			<div id="player-play">
+				<input type="checkbox" id="play" autocomplete="off" onchange="change(this);">
+				<label for="play"></label>
+			</div>
+			<img src="">
+			<div id="player-description">
+				<span id="title">Blind Channel</span><br>
+				<span id="artist">Dark Side</span><br>
+				<span>die letzten 10 Lieder</span>
+			</div>
+			<div>
+				<audio id="audio"><!-- onplay="play_(this);" onpause="pause_(this);"-->
+					<b>F</b>. Dein Browser unterstützt das Audio-Tag nicht.
+				</audio>
+				<div id="abc" style="display: none;">
+					<source src="http://stream.radio-unicc.de:8000/unicc_xq.mp3" type="audio/mpeg">
+					<source src="http://stream.radio-unicc.de:8000/unicc_hq.mp3" type="audio/mpeg">
+					<source src="http://stream.radio-unicc.de:8000/unicc_hq.ogg" type="audio/ogg">
+					<source src="http://stream.radio-unicc.de:8000/unicc_mq.ogg" type="audio/ogg">
+					<source src="http://stream.radio-unicc.de:8000/unicc_lq.ogg" type="audio/ogg">
+					<b>F</b>. Dein Browser unterstützt das Audio-Tag nicht.
+				</div>
+				<script>
+					var abc = document.getElementById("abc");
+					console.log(abc);
+					
+					function change(el) {
+						if(el.checked) return play_(el);
+						return pause_(el);
+					}
+					var audio = document.getElementById("audio");
+					audio.volume = 0.3; //optional
+					function play_() {
+						console.log("PLAY");
+						var temp = abc.innerHTML;
+						abc.innerHTML = audio.innerHTML;
+						audio.innerHTML = temp;
+						audio.load();
+						
+						audio.play();
+					}
+					function pause_() {
+						console.log("PAUSE");
+						audio.pause();
+						var temp = abc.innerHTML;
+						abc.innerHTML = audio.innerHTML;
+						audio.innerHTML = temp;
+						setTimeout(function() {
+							audio.load();
+						}, 1);
+					}
+					/*
+					function play_(el) {
+						console.log("PLAY");
+						if (!el.getAttribute("src")) {
+							var temp = abc.innerHTML;
+							abc.innerHTML = el.innerHTML;
+							el.innerHTML = temp;
+							//el.setAttribute("src", "http://stream.radio-unicc.de:8000/unicc_xq.mp3");
+							el.load();
+						}
+						el.play();
+					}
+					function pause_(el) {
+						console.log("PAUSE");
+						var temp = abc.innerHTML;
+						abc.innerHTML = el.innerHTML;
+						el.innerHTML = temp;
+						//el.setAttribute("src", "");
+						el.pause();
+						setTimeout(function() {
+							el.load();
+						});
+					}*/
+				</script>
+			</div>
+		</div>
+	</body>
+</html>

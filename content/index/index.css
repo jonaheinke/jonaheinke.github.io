@@ -1,33 +1,23 @@
-/*
-canvas {
-	position: absolute;
-	z-index: 2;
-	left: 0;
-	width: 2560px;
-	height: 200px;
-	padding: 0;
-	opacity: 0.04;
-}
-*/
 div#heading {
-	height: 200px;
-	background-image: url('canvas.png');
+	background-image: url("../canvas.png");
 	background-repeat: repeat-x;
 	background-position-y: bottom;
 	background-color: var(--blue-light);
 	position: relative;
-	z-index: 1;
+	z-index: 3;
 	font-size: 1.4rem;
 }
 
 /* --------------- aside ---------------- */
 aside {
+	background-color: var(--white);
 	font-size: 1rem;
 }
 
 aside table {
 	width: 100%;
 	border: 0;
+	font-weight: bold;
 }
 
 aside table thead {
@@ -56,7 +46,7 @@ aside table tbody td:not(:first-child):before {
 	content: "";
 	position: absolute;
 	margin-left: -1rem;
-	margin-top: calc((1em - var(--lineheight)) / 2);
+	margin-top: calc((1.5rem - var(--lineheight)) / 2);
 	width: 3px;
 	height: var(--lineheight);
 	background-color: var(--black);
@@ -69,12 +59,19 @@ aside table + a {
 	padding: 1rem;
 	background-color: var(--blue-light);
 	text-align: center;
+	outline: 0px solid rgba(0, 0, 0, 0);
+	transition: var(--slow-transition-duration);
+}
+
+aside table + a:hover,
+aside table + a:focus {
+	outline: 1px solid var(--black);
 }
 
 @media (orientation: landscape) {
 	aside {
 		position: absolute;
-		z-index: 3; /*TODO: Das hier macht bisher nichts. Audiocircles liegen über dem Sendeplan.*/
+		z-index: 5; /*TODO: Das hier macht bisher nichts. Audiocircles liegen über dem Sendeplan.*/
 		top: 1.5rem;
 		right: 6rem;
 		height: 500px;
@@ -98,4 +95,53 @@ main section:nth-child(2) {
 main section h1 {
 	margin-top: 0;
 	font-size: 2.2rem;
+}
+
+#topics div {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+#topics div a {
+	display: block;
+	position: relative;
+	width: 15rem;
+	height: 15rem;
+	background-size: cover;
+}
+
+#topics div a span {
+	display: block;
+	position: absolute;
+	bottom: 2rem;
+	z-index: 2;
+	min-width: 6rem;
+	max-width: min-content;
+	padding: 0 1rem;
+
+	background-color: var(--black);
+	color: var(--white);
+	font-size: 1.3rem;
+	font-weight: bold;
+}
+
+#topics div a span:after {
+	--angle-slant: 20deg;
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	width: 4rem;
+	height: 100%;
+	
+	-webkit-transform-origin: 100% 0;
+	-ms-transform-origin: 100% 0;
+	transform-origin: 100% 0;
+	-webkit-transform: skew(var(--angle-slant));
+	-ms-transform: skew(var(--angle-slant));
+	transform: skew(var(--angle-slant));
+
+	background-color: var(--black);
 }

@@ -1,0 +1,97 @@
+div#player {
+	--player-height: 7rem;
+
+	position: fixed;
+	z-index: 6;
+	left: 50vw;
+	bottom: 5vh;
+	transform: translateX(-50%);
+
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	box-sizing: border-box;
+	max-width: 100vw;
+	width: 1000px;
+	height: var(--player-height);
+	padding: 1rem;
+	background-color: var(--grey);
+	border-radius: calc(var(--player-height) / 2);
+}
+
+@media (orientation: portrait) {
+	div#player {
+		--player-height: 12rem;
+		bottom: 0;
+	}
+}
+
+div#player-play {
+	--play-circle-height: calc(var(--player-height) - 2rem);
+	height: var(--play-circle-height);
+	width: var(--play-circle-height);
+	border-radius: 50%;
+	background-color: var(--white);
+}
+
+div#player-play label {
+	--play-button-height: calc(var(--play-circle-height) / 2);
+	--play-button-height-half: calc(var(--play-circle-height) / 4);
+	display: block;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	/*transform: translate(-50%, -50%);*/
+}
+
+div#player-play label:hover {
+	cursor: pointer;
+}
+
+div#player-play label:before {
+	content: "";
+	position: absolute;
+	top: var(--play-button-height-half);
+	left: var(--play-button-height-half);
+	height: 0;
+	border-style: solid;
+	border-width: var(--play-button-height-half) 0 var(--play-button-height-half) var(--play-button-height);
+	border-color: transparent transparent transparent var(--darkgrey);
+	transition-property: height, border-width;
+	transition-duration: var(--fast-transition-duration);
+	transition-timing-function: ease;
+}
+
+div#player-play input:checked + label:before {
+	height: var(--play-button-height);
+	border-width: 0 0 0 var(--play-button-height);
+}
+
+div#player-play label:after {
+	content: "";
+	position: absolute;
+	background-color: var(--white);
+	width: 0;
+	height: var(--play-button-height);
+	top: var(--play-button-height-half);
+	left: calc(var(--play-button-height) / 3 + var(--play-button-height-half));
+	transition: width var(--fast-transition-duration) ease;
+}
+
+div#player-play input:checked + label:after {
+	width: calc(var(--play-button-height) / 3);
+}
+
+div#player-play input {
+	display: none;
+}
+
+div#player-description {
+	
+}
+
+div#player-description #title {
+	font-weight: bolder;
+}

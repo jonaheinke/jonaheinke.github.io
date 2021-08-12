@@ -1,3 +1,11 @@
+/*https://stackoverflow.com/a/4819886*/
+/*TODO: Link darf auf Mobilgeräten noch nicht beim ersten Klick triggern.*/
+function isTouchDevice() {
+	return (('ontouchstart' in window) ||
+		(navigator.maxTouchPoints > 0) ||
+		(navigator.msMaxTouchPoints > 0));
+}
+
 function attach_onclick_events() {
 	for(var i = 0; i < document.links.length; i++) {
 		document.links[i].onclick = linkclick;
@@ -10,7 +18,8 @@ function linkclick(e) {
 	var href = a.getAttribute("href");
 	//console.log("Link clicked! " + href);
 
-	if(href == "index.html" || href == "/") return true;
+	//TODO: Müsste eigentlich return false sein, damit die Seite nicht neulädt und der Player stoppt. Aber ohne return true ist der Link wirkungslos.
+	if(href == "content/index/index.html" || href == "/" || href == "") return true;
 
 	var r = new RegExp("^(?:[a-z]+:)?//", "i");
 	if(r.test(href)) return true;
@@ -26,12 +35,13 @@ function linkclick(e) {
 			main.innerHTML = xhr.responseText; //empfangenen HTML Tags einfügen
 			//history.pushState({}, null, href); //setzt die URL in der Adresszeile um
 			attach_onclick_events();
+			document.body.scrollTop = 0; //für Safari
+			document.documentElement.scrollTop = 0; //für Chrome, Firefox, IE und Opera
 		}
 	}
 	xhr.open("GET", href, true);
 	xhr.setRequestHeader("Content-type", "text/html");
 	xhr.send();
-	//console.log("Sent!");
 	return false;
 }
 

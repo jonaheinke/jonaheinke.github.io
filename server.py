@@ -9,7 +9,9 @@ class Website(object):
 
 	@cherrypy.expose
 	def index(self):
-		return self.read_file("index.html")
+		return self.read_file("content/index/index.html")
+
+print(os.getcwd())
 
 config = {
 	"global": {
@@ -17,7 +19,7 @@ config = {
 		"server.socket_port": 80
 	},
 	"/": {
-		"tools.staticdir.root": os.path.abspath(os.getcwd()),
+		"tools.staticdir.root": os.path.join(os.path.abspath(os.getcwd()), "content"),
 		"tools.staticdir.on": True,
 		"tools.staticdir.dir": "."
 	}

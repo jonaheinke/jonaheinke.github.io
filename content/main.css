@@ -1,0 +1,167 @@
+/* ------------ Schriftarten ------------ */
+@font-face {
+	font-family: "Roboto";
+	src: url("fonts/Roboto-Light-webfont.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("fonts/Roboto-Regular-webfont.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("fonts/Roboto-Bold-webfont.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* ------------ Farbtemplate ------------ */
+:root {
+	--black: hsl(60, 4%, 11%);
+	--darkgrey: hsl(0, 0%, 20%);
+	--grey: hsl(0, 0%, 60%);
+	--grey-light: hsl(225, 14%, 95%);
+	--white: white;
+	--blue: hsl(198, 100%, 44%);
+	--blue-light: hsl(172, 90%, 81%);
+	--pink: hsl(306, 50%, 80%);
+}
+
+/* --------- Diverse Variablen ---------- */
+:root {
+	--fast-transition-duration: 200ms;
+	--slow-transition-duration: 400ms;
+}
+
+@media (prefers-reduced-motion) {
+	:root {
+		--fast-transition-duration: 0ms;
+		--slow-transition-duration: 0ms;
+	}
+}
+
+:root {
+	--site-width: 80rem;
+	--side-padding: 7rem;
+}
+
+@media (orientation: portrait) {
+	:root {
+		--side-padding: 1rem;
+	}
+}
+
+/* --------- Nuetzliche Klassen --------- */
+.shadow {
+	box-shadow: 0 0 10px 0 var(--grey);
+}
+
+.center {
+	margin: 0 auto;
+}
+
+/*Hintergrundfarbe geht über volle Breite*/
+.layout.full {
+	display: block;
+	width: 100%;
+	margin: 0;
+}
+
+/*Hintergrundfarbe ist nur mittig auf der Seite*/
+.layout.center {
+	box-sizing: content-box;
+	max-width: var(--site-width);
+	padding-left: var(--side-padding);
+	padding-right: var(--side-padding);
+}
+
+/*keine Textselektion, keine blinkenden I-Cursor*/
+.noselect {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* ------------ base layout ------------- */
+body {
+	margin: 0;
+	overflow-x: hidden;
+	font-family: Roboto, Montserrat, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: var(--black);
+}
+
+@media (orientation: portrait) {
+	body {
+		font-size: 25px;
+	}
+}
+
+body > * {
+	padding: 1rem 0;
+}
+
+a {
+	color: inherit;
+}
+
+a:not(:focus) {
+	text-decoration: none;
+}
+
+/* --------------- header --------------- */
+header {
+	font-weight: bold;
+}
+
+@media (orientation: portrait) {
+	header {
+		font-size: 1.5rem;
+	}
+}
+
+header > div {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header #logo {
+	flex: 1 0 auto;
+}
+
+header #logo img {
+	height: 4rem;
+}
+
+header div#contact a {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.6em;
+}
+
+header div#contact img {
+	width: 1.8em;
+	height: 1.8em;
+}
+
+/* --------------- footer --------------- */
+footer {
+	background-color: var(--black);
+	color: var(--grey);
+	height: 12rem;
+}
+
+@media (orientation: portrait) {
+	footer {
+		height: 14rem;
+	}
+}

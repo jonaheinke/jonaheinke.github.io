@@ -1,0 +1,142 @@
+nav {
+	--link-padding: 1rem;
+	background-color: var(--black);
+	color: var(--white);
+	font-weight: bold;
+
+	padding: 0 calc(var(--side-padding) - var(--link-padding)) !important; /*wird partiell von .layout-center überschrieben*/
+	max-width: calc(var(--site-width) + 2 * var(--link-padding)) !important;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@media (orientation: portrait) {
+	nav {
+		justify-content: space-evenly;
+	}
+}
+
+nav input {
+	margin: 1rem; /*TODO: beim Aktivieren und Deaktivieren dieser Eigenschaft sieht man, dass sich die Höhe von nav um 1px ändert*/
+}
+
+nav a {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding: var(--link-padding);
+	transition: color var(--slow-transition-duration);
+}
+
+nav > * {
+	position: relative;
+}
+
+nav > * a:hover,
+nav > * a:focus,
+nav .currentpage > a {
+	color: var(--blue);
+}
+
+nav a:focus {
+	outline: 2px solid var(--grey);
+	border-radius: 5px;
+}
+/*
+@keyframes nav-show {
+	0% {
+		padding: 0;
+		padding-top: 2rem;
+		visibility: collapse;
+		opacity: 0;
+	}
+	100% {
+		padding: 0;
+		padding-top: 0;
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+@keyframes nav-hide {
+	0% {
+		padding: 0;
+		padding-top: 0;
+		visibility: visible;
+		opacity: 1;
+	}
+	100% {
+		padding: 0;
+		padding-top: 2rem;
+		visibility: collapse;
+		opacity: 0;
+	}
+}
+*/
+nav ul {
+	/*display: none;*/
+	position: absolute;
+	z-index: 7;
+	margin: 0;
+	top: -100vh;
+	left: 50%;
+	transform: translateX(-50%);
+	/*
+	animation-name: nav-hide;
+	animation-direction: normal;
+	animation-duration: var(--slow-transition-duration);
+	animation-fill-mode: both;
+	*/
+	
+	padding: 0;
+	padding-top: 3rem;
+
+	/*visibility: collapse;*/
+	opacity: 0;
+	transition: opacity var(--slow-transition-duration), padding var(--slow-transition-duration);
+	/*transition: all 1s ease-out;
+	transition-timing-function: ease-out;
+	transition-delay: 0ms;
+	transition: visibility 0ms linear 2s;*/
+	
+	list-style-type: none;
+}
+
+nav div > a:hover + ul,
+nav div > a + ul:hover,
+nav div > a:focus + ul,
+nav .currentpage:hover > a + ul,
+nav .currentpage > a:focus + ul {
+	display: block;
+	position: absolute;
+	margin: 0;
+	top: inherit;
+	/*
+	animation-name: nav-show;
+	animation-direction: normal;
+	animation-duration: var(--slow-transition-duration);
+	*/
+	
+	padding: 4rem;
+	padding-top: 0.5rem;
+
+	/*visibility: visible;*/
+	opacity: 1;
+	transition: opacity var(--slow-transition-duration), padding var(--slow-transition-duration);
+	/*transition: all 1s ease-out;
+	transition-timing-function: ease-out;
+	transition: visibility 0ms linear 0ms;
+	*/
+}
+
+nav ul li {
+	background-color: var(--black);
+	white-space: nowrap;
+	text-align: center;
+}
+
+nav ul li a {
+	padding: 0.5rem 1rem;
+}
