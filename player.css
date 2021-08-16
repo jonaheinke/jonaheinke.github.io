@@ -60,7 +60,7 @@ div#player-play label:before {
 	height: 0;
 	border-style: solid;
 	border-width: var(--play-button-height-half) 0 var(--play-button-height-half) var(--play-button-height);
-	border-color: transparent transparent transparent var(--darkgrey);
+	border-color: transparent transparent transparent var(--grey-dark);
 	transition-property: height, border-width;
 	transition-duration: var(--fast-transition-duration);
 	transition-timing-function: ease;

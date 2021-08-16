@@ -10,9 +10,9 @@
 		<link rel="stylesheet" href="nav.css">
 		<link rel="stylesheet" href="player.css">
 		<script src="dynamic_content.js"></script>
-		<script src="sendeplan.js"></script>
+		<script src="programm.js"></script>
 
-		<link rel="stylesheet" id="css_current_page" href="index/index.css">
+		<link rel="stylesheet" id="css_current_page" href="index/index.css"><!--href könnte auch leer gelassen werden, wird durch dynamic_content.js gesetzt-->
 	</head>
 	<body>
 		<!--Logo, Motto, Facebook, Instagram, Mitmachen, Kontakt-->
@@ -25,10 +25,10 @@
 					</a>
 				</div>
 				<div id="contact">
-					<a href="https://www.facebook.com/radiounicc" tabindex="-1"><img src="icons/facebook-logo.png"></a>
-					<a href="https://www.instagram.com/radiounicc" tabindex="-1"><img src="icons/instagram-logo.png"></a>
-					<a href="http://www.radio-unicc.de/mitmachen/" tabindex="-1">Mitmachen</a>
-					<a href="http://www.radio-unicc.de/kontakt/" tabindex="-1">Kontakt</a>
+					<a href="https://www.facebook.com/radiounicc" target="_blank" tabindex="-1"><img src="icons/facebook-logo.png"></a>
+					<a href="https://www.instagram.com/radiounicc" target="_blank" tabindex="-1"><img src="icons/instagram-logo.png"></a>
+					<a href="http://www.radio-unicc.de/mitmachen/" target="_blank" tabindex="-1">Mitmachen</a>
+					<a href="http://www.radio-unicc.de/kontakt/" target="_blank" tabindex="-1">Kontakt</a>
 				</div>
 			</div>
 		</header>
@@ -51,7 +51,7 @@
 				</ul>
 			</div>
 			<div>
-				<a href="http://www.radio-unicc.de/sendeplan/">Sendungen</a>
+				<a href="sendeplan/sendeplan.html">Sendungen</a>
 			</div>
 			<div>
 				<a href="show/show.html">Podcasts</a>
@@ -64,10 +64,10 @@
 				</ul>
 			</div>
 			<div>
-				<a href="http://www.radio-unicc.de/sender/hoeren/">Über uns</a>
+				<a href="http://www.radio-unicc.de/sender/hoeren/" target="_blank">Über uns</a>
 				<ul>
-					<li><a href="http://www.radio-unicc.de/sender/historie/">Historie</a></li>
-					<li><a href="http://www.radio-unicc.de/sender/team/">Team</a></li>
+					<li><a href="http://www.radio-unicc.de/sender/historie/" target="_blank">Historie</a></li>
+					<li><a href="http://www.radio-unicc.de/sender/team/" target="_blank">Team</a></li>
 				</ul>
 			</div>
 			<form method="GET" action="https://www.google.com/search" style="margin-bottom: 0;">
@@ -79,86 +79,16 @@
 			</div>
 		</nav>
 
-		<!--Überschriften-->
-		<div id="heading" class="layout center">
-			<h1>Unabhängig - bunt - UNiCC</h1>
-			<h2>Dein Radiosender aus Chemnitz</h2>
-			<i>täglich zwischen 18 und 19 Uhr auf 102,7MHz<!--<br>in der Woche zwischen 7 und 23 Uhr--></i>
-			
-			<!--Sendeplan-->
-			<aside class="noselect shadow">
-				<table cellspacing="0">
-					<thead>
-						<tr>
-							<th>Heute</th>
-							<th id="sendeplan_datum">&lt; Datum &gt;</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr><td>Jetzt</td><td>Just Music</td></tr>
-						<tr><td>18-19:00</td><td>OnAir</td></tr>
-						<tr><td>19-20:00</td><td>Wunschbox</td></tr>
-						<tr><td>20-21:00</td><td>MAGic</td></tr>
-					</tbody>
-				</table>
-				<a href="http://www.radio-unicc.de/sendeplan/">Kompletter Sendeplan</a>
-				<h3>Lieder-Lupe</h3>
-				<img>
-				<span></span>
-				<span></span>
-			</aside>
-		</div>
+        <main class="layout full"></main>
 
-		<!--Inhalt-->
-		<main class="layout center">
-			<section>
-				<h1>Top-aktuell</h1>
-				<article>Artikel 1</article>
-				<article>Artikel 2</article>
-				<article>Artikel 3</article>
-			</section>
-			<section id="topics" class="noselect">
-				<h1>Themen</h1>
-				<div>
-					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_50ff63c35ef64956894765f29fac3f88~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_50ff63c35ef64956894765f29fac3f88~mv2.webp');">
-						<span>Musik</span>
-					</a>
-					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_9f807c86958748ed816e7fa3edbfbe5a~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_9f807c86958748ed816e7fa3edbfbe5a~mv2.webp');">
-						<span>Kultur</span>
-					</a>
-					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_9f807c86958748ed816e7fa3edbfbe5a~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_9f807c86958748ed816e7fa3edbfbe5a~mv2.webp');">
-						<span>Literatur & Film</span>
-					</a>
-					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_86ec8d1f00544354994da376c515ddcd~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_86ec8d1f00544354994da376c515ddcd~mv2.webp');">
-						<span>Interviews</span>
-					</a>
-					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_7794b4a844cf4570aa03388e4df4d877~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_7794b4a844cf4570aa03388e4df4d877~mv2.webp');">
-						<span>Events</span>
-					</a>
-					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_86ec8d1f00544354994da376c515ddcd~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_86ec8d1f00544354994da376c515ddcd~mv2.webp');">
-						<span>Politik & Zeitgeschehen</span>
-					</a>
-					<a href="category/category.html" style="background-image: url('https://static.wixstatic.com/media/9817d8_77484f6090594de8b1b6f0ba096fb5dc~mv2.png/v1/fill/w_241,h_250,al_c,q_85,usm_0.66_1.00_0.01/9817d8_77484f6090594de8b1b6f0ba096fb5dc~mv2.webp');">
-						<span>Kommentar</span>
-					</a>
-				</div>
-			</section>
-			<section>
-				<h1>UNiCC auf Instagram</h1>
-				<article>Post 1</article>
-				<article>Post 2</article>
-				<article>Post 3</article>
-			</section>
-		</main>
-
-		<!--Fußzeile mit Copyright, Datenschutz, etc.-->
+        <!--Fußzeile mit Copyright, Datenschutz, etc.-->
 		<footer class="layout full noselect">
 			<div class="layout center">
 				© <span id="year">{{current_year}}</span> Radio UNiCC | 
-				<a href="http://www.radio-unicc.de/impressum/" target="_self">Impressum</a> | 
-				<a href="http://www.radio-unicc.de/datenschutz/" target="_self">Datenschutz</a> | 
-				<a href="http://www.radio-unicc.de/kontakt/" target="_self">Kontakt</a> | 
-				<a href="http://www.radio-unicc.de/admin/" target="_self">Admin</a>
+				<a href="http://www.radio-unicc.de/impressum/" target="_blank">Impressum</a> | 
+				<a href="http://www.radio-unicc.de/datenschutz/" target="_blank">Datenschutz</a> | 
+				<a href="http://www.radio-unicc.de/kontakt/" target="_blank">Kontakt</a> | 
+				<a href="http://www.radio-unicc.de/admin/" target="_blank">Admin</a>
 				<script>
 					document.getElementById("year").innerHTML = new Date().getFullYear();
 				</script>
@@ -173,9 +103,9 @@
 			</div>
 			<img src="">
 			<div id="player-description">
-				<span id="title">Blind Channel</span><br>
-				<span id="artist">Dark Side</span><br>
-				<span>die letzten 10 Lieder</span>
+				<span id="title">TITEL</span><br>
+				<span id="artist">KÜNSTLER</span><br>
+				<span>die letzten 5 Lieder</span>
 			</div>
 			<div>
 				<audio id="audio"><!-- onplay="play_(this);" onpause="pause_(this);"-->
@@ -191,7 +121,7 @@
 				</div>
 				<script>
 					var abc = document.getElementById("abc");
-					console.log(abc);
+					//console.log(abc);
 					
 					function change(el) {
 						if(el.checked) return play_(el);
@@ -200,7 +130,7 @@
 					var audio = document.getElementById("audio");
 					audio.volume = 0.3; //optional
 					function play_() {
-						console.log("PLAY");
+						//console.log("PLAY");
 						var temp = abc.innerHTML;
 						abc.innerHTML = audio.innerHTML;
 						audio.innerHTML = temp;
@@ -209,7 +139,7 @@
 						audio.play();
 					}
 					function pause_() {
-						console.log("PAUSE");
+						//console.log("PAUSE");
 						audio.pause();
 						var temp = abc.innerHTML;
 						abc.innerHTML = audio.innerHTML;

@@ -1,0 +1,43 @@
+main {
+	font-size: 1rem;
+	padding-bottom: 1rem;
+}
+
+main table {
+	width: 100%;
+	border: 0;
+	border-spacing: 0.5rem;
+}
+
+main table th {
+	padding: 0.5rem;
+	background-color: var(--black);
+	color: var(--white);
+	font-weight: bold;
+}
+	
+main table tbody td {
+	padding: 1rem;
+}
+
+main table tbody td:not(:empty, .wochen_trenner) {
+	background-color: var(--grey-light);
+}
+
+main table tbody td.justmusic {
+	background-color: var(--blue-light);
+	text-align: center;
+}
+
+main table tbody td.onair {
+	background-color: var(--pink-light);
+}
+
+main table tbody td span {
+	font-weight: bold;
+}
+
+main table tbody td.wochen_trenner {
+	text-align: center;
+	padding: 0;
+}

@@ -1,8 +1,14 @@
+main > div {
+	position: relative;
+}
+
 div#heading {
+	overflow: auto hidden;
+	padding-bottom: 1rem;
 	background-image: url("../canvas.png");
 	background-repeat: repeat-x;
 	background-position-y: bottom;
-	background-color: var(--blue-light);
+	background-color: var(--blue);
 	position: relative;
 	z-index: 3;
 	font-size: 1.4rem;
@@ -34,6 +40,7 @@ aside table tbody tr:first-child {
 }
 
 aside table tbody tr {
+	position: relative;
 	background-color: var(--grey-light);
 }
 
@@ -42,13 +49,12 @@ aside table tbody td {
 }
 
 aside table tbody td:not(:first-child):before {
-	--lineheight: 1.5em;
 	content: "";
 	position: absolute;
+	top: 1rem;
 	margin-left: -1rem;
-	margin-top: calc((1.5rem - var(--lineheight)) / 2);
 	width: 3px;
-	height: var(--lineheight);
+	height: calc(100% - 2rem);
 	background-color: var(--black);
 }
 
@@ -73,9 +79,12 @@ aside table + a:focus {
 		position: absolute;
 		z-index: 5; /*TODO: Das hier macht bisher nichts. Audiocircles liegen über dem Sendeplan.*/
 		top: 1.5rem;
-		right: 6rem;
-		height: 500px;
-		width: 300px;
+		/*right: max(0px, calc(6rem + (100vw - var(--site-width)) / 2));*//*TODO: das ist eigentlich richtig, platziert aber den Sendeplan zu weit links*/
+		right: max(0px, calc((100vw - var(--site-width)) / 2));
+		width: auto;
+		min-width: 250px;
+		max-width: 400px;
+		
 	}
 }
 
@@ -88,7 +97,7 @@ main section {
 	padding: 1rem;
 }
 
-main section:nth-child(2) {
+main > section:nth-child(even) {
 	background-color: var(--grey-light);
 }
 
@@ -118,11 +127,12 @@ main section h1 {
 	z-index: 2;
 	min-width: 6rem;
 	max-width: min-content;
-	padding: 0 1rem;
+	padding: 2px 1rem;
 
 	background-color: var(--black);
 	color: var(--white);
 	font-size: 1.3rem;
+	line-height: 1.5rem;
 	font-weight: bold;
 }
 

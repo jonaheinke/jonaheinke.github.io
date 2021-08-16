@@ -8,22 +8,11 @@ function isTouchDevice() {
 
 function attach_onclick_events() {
 	for(var i = 0; i < document.links.length; i++) {
-		document.links[i].onclick = linkclick;
+		document.links[i].onclick = link_click;
 	}
 }
 
-function linkclick(e) {
-	var a = e.target;
-	while(a.nodeName != "A") a = a.parentElement;
-	var href = a.getAttribute("href");
-	//console.log("Link clicked! " + href);
-
-	//TODO: Müsste eigentlich return false sein, damit die Seite nicht neulädt und der Player stoppt. Aber ohne return true ist der Link wirkungslos.
-	if(href == "content/index/index.html" || href == "/" || href == "") return true;
-
-	var r = new RegExp("^(?:[a-z]+:)?//", "i");
-	if(r.test(href)) return true;
-
+function load_page(url) {
 	var css = document.getElementById("css_current_page");
 	var main = document.getElementsByTagName("main")[0];
 	var xhr = new XMLHttpRequest();
@@ -31,18 +20,40 @@ function linkclick(e) {
 		if(xhr.readyState == 4 && xhr.status == 200) {
 			//console.log("Website content recieved!");
 			if(document.getElementById("heading")) document.getElementById("heading").outerHTML = "";
-			css.href = href.replace(".html", ".css"); //Korrespondierende CSS Datei laden
+			css.href = url.replace(".html", ".css"); //Korrespondierende CSS Datei laden
 			main.innerHTML = xhr.responseText; //empfangenen HTML Tags einfügen
-			//history.pushState({}, null, href); //setzt die URL in der Adresszeile um
+			//history.pushState({}, null, url); //setzt die URL in der Adresszeile um
 			attach_onclick_events();
+			loadDate(); //aus programm.js: lädt das Datum in den Sendeplan rein
 			document.body.scrollTop = 0; //für Safari
 			document.documentElement.scrollTop = 0; //für Chrome, Firefox, IE und Opera
 		}
 	}
-	xhr.open("GET", href, true);
+	xhr.open("GET", url, true);
 	xhr.setRequestHeader("Content-type", "text/html");
 	xhr.send();
+}
+
+function link_click(e) {
+	var a = e.target;
+	while(a.nodeName != "A") a = a.parentElement;
+	var href = a.getAttribute("href");
+	//console.log("Link clicked! " + href);
+
+	//TODO: Müsste eigentlich return false sein, damit die Seite nicht neulädt und der Player stoppt. Aber ohne return true ist der Link wirkungslos.
+	if(href == "index/index.html" || href == "/" || href == "") {
+		load_page("index/index.html");
+		return false;
+	}
+
+	var r = new RegExp("^(?:[a-z]+:)?//", "i");
+	if(r.test(href)) return true;
+
+	load_page(href);
 	return false;
 }
 
-document.addEventListener("DOMContentLoaded", attach_onclick_events);
+document.addEventListener("DOMContentLoaded", function() {
+	load_page("index/index.html");
+	attach_onclick_events();
+});

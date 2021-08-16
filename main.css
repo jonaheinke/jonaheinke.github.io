@@ -23,13 +23,15 @@
 /* ------------ Farbtemplate ------------ */
 :root {
 	--black: hsl(60, 4%, 11%);
-	--darkgrey: hsl(0, 0%, 20%);
+	--grey-dark: hsl(0, 0%, 20%);
 	--grey: hsl(0, 0%, 60%);
 	--grey-light: hsl(225, 14%, 95%);
 	--white: white;
-	--blue: hsl(198, 100%, 44%);
-	--blue-light: hsl(172, 90%, 81%);
+	--blue-medium: hsl(198, 100%, 44%);
+	--blue: hsl(172, 90%, 80%);
+	--blue-light: hsl(172, 90%, 92%);
 	--pink: hsl(306, 50%, 80%);
+	--pink-light: hsl(306, 50%, 92%);
 }
 
 /* --------- Diverse Variablen ---------- */
@@ -88,6 +90,19 @@
 	user-select: none;
 }
 
+.heading_border {
+	border-left: 6px solid var(--black);
+	padding-left: 1rem;
+}
+
+.heading_border.blue {
+	border-color: var(--blue);
+}
+
+.heading_border.pink {
+	border-color: var(--pink);
+}
+
 /* ------------ base layout ------------- */
 body {
 	margin: 0;
@@ -103,10 +118,6 @@ body {
 	}
 }
 
-body > * {
-	padding: 1rem 0;
-}
-
 a {
 	color: inherit;
 }
@@ -117,6 +128,7 @@ a:not(:focus) {
 
 /* --------------- header --------------- */
 header {
+	padding: 1rem 0;
 	font-weight: bold;
 }
 
@@ -138,6 +150,10 @@ header #logo {
 	flex: 1 0 auto;
 }
 
+header #logo a {
+	display: block;
+}
+
 header #logo img {
 	height: 4rem;
 }
@@ -153,11 +169,17 @@ header div#contact img {
 	height: 1.8em;
 }
 
+/* ---------------- main ---------------- */
+main {
+	position: relative;
+}
+
 /* --------------- footer --------------- */
 footer {
+	padding: 1rem 0;
+	height: 12rem;
 	background-color: var(--black);
 	color: var(--grey);
-	height: 12rem;
 }
 
 @media (orientation: portrait) {

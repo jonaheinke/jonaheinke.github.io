@@ -1,4 +1,4 @@
-main {
+main > div {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -21,7 +21,5 @@ main section#sidebar {
 }
 
 main h1 {
-	border-left: 6px solid var(--black);
-	padding-left: 1rem;
 	font-size: 2.5rem;
 }

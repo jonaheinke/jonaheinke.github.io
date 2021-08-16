@@ -3,8 +3,9 @@ nav {
 	background-color: var(--black);
 	color: var(--white);
 	font-weight: bold;
-
-	padding: 0 calc(var(--side-padding) - var(--link-padding)) !important; /*wird partiell von .layout-center überschrieben*/
+	
+	padding: 1rem 0;
+	padding: 0 calc(var(--side-padding) - var(--link-padding)) !important; /*wird partiell von .layout.center überschrieben*/
 	max-width: calc(var(--site-width) + 2 * var(--link-padding)) !important;
 
 	display: flex;
@@ -37,7 +38,7 @@ nav > * {
 nav > * a:hover,
 nav > * a:focus,
 nav .currentpage > a {
-	color: var(--blue);
+	color: var(--blue-medium);
 }
 
 nav a:focus {
