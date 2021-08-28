@@ -94,6 +94,6 @@ div#player-description {
 	
 }
 
-div#player-description #title {
+div#player-description .song-title {
 	font-weight: bolder;
 }

@@ -7,10 +7,12 @@
 		<title>Radio UNiCC - Home</title>
 		<!--TODO: weitere Meta Infos-->
 		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="header.css">
 		<link rel="stylesheet" href="nav.css">
 		<link rel="stylesheet" href="player.css">
 		<script src="dynamic_content.js"></script>
 		<script src="programm.js"></script>
+		<script src="player.js"></script>
 
 		<link rel="stylesheet" id="css_current_page" href="index/index.css"><!--href könnte auch leer gelassen werden, wird durch dynamic_content.js gesetzt-->
 	</head>
@@ -25,10 +27,10 @@
 					</a>
 				</div>
 				<div id="contact">
-					<a href="https://www.facebook.com/radiounicc" target="_blank" tabindex="-1"><img src="icons/facebook-logo.png"></a>
-					<a href="https://www.instagram.com/radiounicc" target="_blank" tabindex="-1"><img src="icons/instagram-logo.png"></a>
-					<a href="http://www.radio-unicc.de/mitmachen/" target="_blank" tabindex="-1">Mitmachen</a>
-					<a href="http://www.radio-unicc.de/kontakt/" target="_blank" tabindex="-1">Kontakt</a>
+					<a href="https://www.facebook.com/radiounicc" target="_blank" tabindex="-1"><img src="icons/facebook-logo.png" alt="FB"></a>
+					<a href="https://www.instagram.com/radiounicc" target="_blank" tabindex="-1"><img src="icons/instagram-logo.png" alt="IG"></a>
+					<a href="/" target="_blank" tabindex="-1">Mitmachen</a>
+					<a href="extra/kontakt.html" target="_blank" tabindex="-1">Kontakt</a>
 				</div>
 			</div>
 		</header>
@@ -64,13 +66,13 @@
 				</ul>
 			</div>
 			<div>
-				<a href="http://www.radio-unicc.de/sender/hoeren/" target="_blank">Über uns</a>
+				<a href="/" target="_blank">Über uns</a>
 				<ul>
-					<li><a href="http://www.radio-unicc.de/sender/historie/" target="_blank">Historie</a></li>
-					<li><a href="http://www.radio-unicc.de/sender/team/" target="_blank">Team</a></li>
+					<li><a href="/" target="_blank">Historie</a></li>
+					<li><a href="/" target="_blank">Team</a></li>
 				</ul>
 			</div>
-			<form method="GET" action="https://www.google.com/search" style="margin-bottom: 0;">
+			<form method="GET" action="https://www.google.com/search">
 				<input type="hidden" name="sitesearch" value="radio-unicc.de">
 				<input name="q" type="search" placeholder="Suchen...">
 			</form>
@@ -85,10 +87,10 @@
 		<footer class="layout full noselect">
 			<div class="layout center">
 				© <span id="year">{{current_year}}</span> Radio UNiCC | 
-				<a href="http://www.radio-unicc.de/impressum/" target="_blank">Impressum</a> | 
-				<a href="http://www.radio-unicc.de/datenschutz/" target="_blank">Datenschutz</a> | 
-				<a href="http://www.radio-unicc.de/kontakt/" target="_blank">Kontakt</a> | 
-				<a href="http://www.radio-unicc.de/admin/" target="_blank">Admin</a>
+				<a href="extra/impressum.html" target="_blank">Impressum</a> | 
+				<a href="extra/datenschutz.html" target="_blank">Datenschutz</a> | 
+				<a href="extra/kontakt.html" target="_blank">Kontakt</a> | 
+				<a href="/" target="_blank">Admin</a>
 				<script>
 					document.getElementById("year").innerHTML = new Date().getFullYear();
 				</script>
@@ -103,8 +105,8 @@
 			</div>
 			<img src="">
 			<div id="player-description">
-				<span id="title">TITEL</span><br>
-				<span id="artist">KÜNSTLER</span><br>
+				<span class="song-title">TITEL</span><br>
+				<span class="song-artist">KÜNSTLER</span><br>
 				<span>die letzten 5 Lieder</span>
 			</div>
 			<div>
@@ -119,60 +121,15 @@
 					<source src="http://stream.radio-unicc.de:8000/unicc_lq.ogg" type="audio/ogg">
 					<b>F</b>. Dein Browser unterstützt das Audio-Tag nicht.
 				</div>
-				<script>
-					var abc = document.getElementById("abc");
-					//console.log(abc);
-					
-					function change(el) {
-						if(el.checked) return play_(el);
-						return pause_(el);
-					}
-					var audio = document.getElementById("audio");
-					audio.volume = 0.3; //optional
-					function play_() {
-						//console.log("PLAY");
-						var temp = abc.innerHTML;
-						abc.innerHTML = audio.innerHTML;
-						audio.innerHTML = temp;
-						audio.load();
-						
-						audio.play();
-					}
-					function pause_() {
-						//console.log("PAUSE");
-						audio.pause();
-						var temp = abc.innerHTML;
-						abc.innerHTML = audio.innerHTML;
-						audio.innerHTML = temp;
-						setTimeout(function() {
-							audio.load();
-						}, 1);
-					}
-					/*
-					function play_(el) {
-						console.log("PLAY");
-						if (!el.getAttribute("src")) {
-							var temp = abc.innerHTML;
-							abc.innerHTML = el.innerHTML;
-							el.innerHTML = temp;
-							//el.setAttribute("src", "http://stream.radio-unicc.de:8000/unicc_xq.mp3");
-							el.load();
-						}
-						el.play();
-					}
-					function pause_(el) {
-						console.log("PAUSE");
-						var temp = abc.innerHTML;
-						abc.innerHTML = el.innerHTML;
-						el.innerHTML = temp;
-						//el.setAttribute("src", "");
-						el.pause();
-						setTimeout(function() {
-							el.load();
-						});
-					}*/
-				</script>
 			</div>
 		</div>
+		<script>
+			//TODO: Funktioniert noch nicht für dynamisch geladenen Content
+			//https://stackoverflow.com/questions/3219758/detect-changes-in-the-dom (jquery.initialize sieht echt gut aus)
+			document.querySelectorAll(".noselect").forEach(function(element) {
+				element.setAttribute("draggable", "false");
+				element.setAttribute("ondragstart", "return false");
+			});
+		</script>
 	</body>
 </html>

@@ -41,3 +41,11 @@ main table tbody td.wochen_trenner {
 	text-align: center;
 	padding: 0;
 }
+
+main table tbody td a {
+	display: block;
+}
+
+main table tbody td a:hover {
+	text-decoration: underline;
+}

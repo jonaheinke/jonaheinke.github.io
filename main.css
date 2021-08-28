@@ -22,6 +22,9 @@
 
 /* ------------ Farbtemplate ------------ */
 :root {
+	/*WARNUNG: Bevor man diese Farben verändert, sollte man Rücksprache mit dem
+	  Designer halten und darauf achten, dass Bilder diese Farben auch benutzen
+	  und dort permanent abgespeichert sind.*/
 	--black: hsl(60, 4%, 11%);
 	--grey-dark: hsl(0, 0%, 20%);
 	--grey: hsl(0, 0%, 60%);
@@ -82,12 +85,18 @@
 	padding-right: var(--side-padding);
 }
 
+.text-justify {
+	text-align: justify;
+}
+
 /*keine Textselektion, keine blinkenden I-Cursor*/
 .noselect {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	-webkit-user-drag: none;
+	user-drag: none;
 }
 
 .heading_border {
@@ -124,49 +133,6 @@ a {
 
 a:not(:focus) {
 	text-decoration: none;
-}
-
-/* --------------- header --------------- */
-header {
-	padding: 1rem 0;
-	font-weight: bold;
-}
-
-@media (orientation: portrait) {
-	header {
-		font-size: 1.5rem;
-	}
-}
-
-header > div {
-	display: flex;
-	flex-wrap: wrap;
-	row-gap: 1rem;
-	justify-content: space-between;
-	align-items: center;
-}
-
-header #logo {
-	flex: 1 0 auto;
-}
-
-header #logo a {
-	display: block;
-}
-
-header #logo img {
-	height: 4rem;
-}
-
-header div#contact a {
-	display: inline-block;
-	vertical-align: middle;
-	padding: 0.6em;
-}
-
-header div#contact img {
-	width: 1.8em;
-	height: 1.8em;
 }
 
 /* ---------------- main ---------------- */

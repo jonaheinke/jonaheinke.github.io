@@ -1,17 +1,17 @@
-main > div {
-	position: relative;
-}
-
 div#heading {
-	overflow: auto hidden;
-	padding-bottom: 1rem;
 	background-image: url("../canvas.png");
 	background-repeat: repeat-x;
 	background-position-y: bottom;
-	background-color: var(--blue);
 	position: relative;
 	z-index: 3;
 	font-size: 1.4rem;
+}
+
+div#heading > div {
+	overflow: auto hidden;
+	padding-bottom: 1rem;
+	background-color: var(--blue);
+	mix-blend-mode: overlay;
 }
 
 /* --------------- aside ---------------- */
@@ -58,13 +58,16 @@ aside table tbody td:not(:first-child):before {
 	background-color: var(--black);
 }
 
-aside table + a {
+aside > :not(table) {
 	display: block;
+	text-align: center;
+}
+
+aside table + a {
 	box-sizing: border-box;
 	width: 100%;
 	padding: 1rem;
 	background-color: var(--blue-light);
-	text-align: center;
 	outline: 0px solid rgba(0, 0, 0, 0);
 	transition: var(--slow-transition-duration);
 }
@@ -74,7 +77,12 @@ aside table + a:focus {
 	outline: 1px solid var(--black);
 }
 
-@media (orientation: landscape) {
+aside img {
+	margin: 1rem auto;
+	min-width: 15rem;
+}
+
+@media (orientation: landscape) and (min-width: 1100px) {
 	aside {
 		position: absolute;
 		z-index: 5; /*TODO: Das hier macht bisher nichts. Audiocircles liegen über dem Sendeplan.*/
@@ -84,15 +92,10 @@ aside table + a:focus {
 		width: auto;
 		min-width: 250px;
 		max-width: 400px;
-		
 	}
 }
 
 /* ---------------- main ---------------- */
-main {
-
-}
-
 main section {
 	padding: 1rem;
 }
@@ -106,6 +109,44 @@ main section h1 {
 	font-size: 2.2rem;
 }
 
+
+
+/* Top-aktuell */
+#news div {
+	display: flex;
+	gap: 3rem;
+	flex-wrap: wrap;
+	position: relative;
+	font-weight: bold;
+}
+
+#news div a {
+	width: 15rem;
+}
+
+#news div img {
+	display: block;
+	width: 100%;
+	margin-bottom: 1.5rem;
+}
+
+#news div span {
+	
+}
+
+#news div span.contenttype {
+	position: absolute;
+	margin-top: -2.5rem;
+	padding: 4px 1rem;
+	background-color: var(--grey-dark);
+	color: var(--white);
+}
+
+#news div span.title {
+	
+}
+
+/* Themen */
 #topics div {
 	display: flex;
 	gap: 0.5rem;
@@ -127,7 +168,7 @@ main section h1 {
 	z-index: 2;
 	min-width: 6rem;
 	max-width: min-content;
-	padding: 2px 1rem;
+	padding: 4px 1rem;
 
 	background-color: var(--black);
 	color: var(--white);
@@ -154,4 +195,49 @@ main section h1 {
 	transform: skew(var(--angle-slant));
 
 	background-color: var(--black);
+}
+
+
+
+
+section#instagram > div {
+	display: flex;
+	gap: 3rem 0.5rem;
+	flex-wrap: wrap;
+}
+
+section#instagram > div {
+	margin-bottom: 2rem;
+}
+
+section#instagram > div a {
+	position: relative;
+}
+
+/*Likes & Kommentare*/
+section#instagram a div {
+	position: absolute;
+	z-index: -1;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.5rem;
+	transform: translateY(-100%);
+	transition: transform var(--fast-transition-duration) linear;
+	background-color: var(--black);
+	color: var(--white);
+	text-align: center;
+}
+
+section#instagram a:hover div,
+section#instagram a:focus div {
+	transform: translateY(0);
+}
+
+section#instagram a div > * {
+	display: inline-block;
+	padding: 0 0.25rem;
+}
+
+section#instagram a div img {
+	height: 1em;
 }

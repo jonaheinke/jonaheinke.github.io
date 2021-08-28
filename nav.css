@@ -18,8 +18,19 @@ nav {
 	}
 }
 
-nav input {
+nav form {
+	margin-left: auto;
+	margin-bottom: 0;
+}
+
+/*
+nav div:last-child {
+	margin-right: auto;
+}*/
+
+nav form input {
 	margin: 1rem; /*TODO: beim Aktivieren und Deaktivieren dieser Eigenschaft sieht man, dass sich die Höhe von nav um 1px ändert*/
+	width: 11.5rem;
 }
 
 nav a {
@@ -43,7 +54,7 @@ nav .currentpage > a {
 
 nav a:focus {
 	outline: 2px solid var(--grey);
-	border-radius: 5px;
+	border-radius: 5px; /*TODO: funktioniert in Chrome nicht?*/
 }
 /*
 @keyframes nav-show {
@@ -108,6 +119,7 @@ nav ul {
 nav div > a:hover + ul,
 nav div > a + ul:hover,
 nav div > a:focus + ul,
+nav div > a + ul:focus-within,
 nav .currentpage:hover > a + ul,
 nav .currentpage > a:focus + ul {
 	display: block;
