@@ -75,7 +75,7 @@ function change_volume(value) {
 const interval = 3000;
 
 function get_song_info() {
-	fetch("http://www.radio-unicc.de/soundstatus/info.php")
+	fetch("https://www.radio-unicc.de/soundstatus/info.php")
 	.then(function (response) {
 		return response.json();
 	}).then(function (data) {
