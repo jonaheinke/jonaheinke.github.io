@@ -6,34 +6,6 @@ function isTouchDevice() {
 		(navigator.msMaxTouchPoints > 0));
 }
 
-function attach_onclick_events() {
-	for(var i = 0; i < document.links.length; i++) {
-		document.links[i].onclick = link_click;
-	}
-}
-
-function load_page(url) {
-	var css = document.getElementById("css_current_page");
-	var main = document.getElementsByTagName("main")[0];
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function(e) {
-		if(xhr.readyState == 4 && xhr.status == 200) {
-			//console.log("Website content recieved!");
-			if(document.getElementById("heading")) document.getElementById("heading").outerHTML = "";
-			css.href = url.replace(".html", ".css"); //Korrespondierende CSS Datei laden
-			main.innerHTML = xhr.responseText; //empfangenen HTML Tags einfügen
-			//history.pushState({}, null, url); //setzt die URL in der Adresszeile um
-			attach_onclick_events();
-			loadDate(); //aus programm.js: lädt das Datum in den Sendeplan rein
-			document.body.scrollTop = 0; //für Safari
-			document.documentElement.scrollTop = 0; //für Chrome, Firefox, IE und Opera
-		}
-	}
-	xhr.open("GET", url, true);
-	xhr.setRequestHeader("Content-type", "text/html");
-	xhr.send();
-}
-
 function link_click(e) {
 	var a = e.target;
 	while(a.nodeName != "A") a = a.parentElement;
@@ -53,7 +25,32 @@ function link_click(e) {
 	return false;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-	load_page("index/index.html");
-	attach_onclick_events();
-});
+function attach_onclick_events() {
+	for(var i = 0; i < document.links.length; i++) {
+		document.links[i].onclick = link_click;
+	}
+}
+
+function load_page(url) {
+	var css = document.getElementById("css_current_page");
+	var main = document.getElementsByTagName("main")[0];
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(e) {
+		if(xhr.readyState == 4 && xhr.status == 200) {
+			//console.log("Website content recieved!");
+			if(document.getElementById("heading")) document.getElementById("heading").outerHTML = "";
+			css.href = url.replace(".html", ".css"); //Korrespondierende CSS Datei laden
+			main.innerHTML = xhr.responseText; //empfangenen HTML Tags einfügen
+			//history.pushState({}, null, url); //setzt die URL in der Adresszeile um
+			attach_onclick_events();
+			document.dispatchEvent(newDOMContentLoaded);
+			document.body.scrollTop = 0; //für Safari
+			document.documentElement.scrollTop = 0; //für Chrome, Firefox, IE und Opera
+		}
+	}
+	xhr.open("GET", url, true);
+	xhr.setRequestHeader("Content-type", "text/html");
+	xhr.send();
+}
+
+document.addEventListener("DOMContentLoaded", () => load_page("index/index.html"));

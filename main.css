@@ -30,6 +30,7 @@
 	--grey: hsl(0, 0%, 60%);
 	--grey-light: hsl(225, 14%, 95%);
 	--white: white;
+	--blue-dark: hsl(208, 70%, 21%);
 	--blue-medium: hsl(198, 100%, 44%);
 	--blue: hsl(172, 90%, 80%);
 	--blue-light: hsl(172, 90%, 92%);
@@ -62,6 +63,10 @@
 }
 
 /* --------- Nuetzliche Klassen --------- */
+.hide {
+	display: none;
+}
+
 .shadow {
 	box-shadow: 0 0 10px 0 var(--grey);
 }
@@ -143,7 +148,7 @@ main {
 /* --------------- footer --------------- */
 footer {
 	padding: 1rem 0;
-	height: 12rem;
+	height: 11rem;
 	background-color: var(--black);
 	color: var(--grey);
 }

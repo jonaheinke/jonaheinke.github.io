@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="header.css">
 		<link rel="stylesheet" href="nav.css">
 		<link rel="stylesheet" href="player.css">
+		<script src="main.js"></script>
 		<script src="dynamic_content.js"></script>
 		<script src="programm.js"></script>
 		<script src="player.js"></script>
@@ -18,11 +19,12 @@
 	</head>
 	<body>
 		<!--Logo, Motto, Facebook, Instagram, Mitmachen, Kontakt-->
-		<header class="layout full noselect shadow">
+		<header class="layout full noselect shadow" role="banner">
 			<div class="layout center">
 				<div id="logo">
 					<a href="/" tabindex="-1">
-						<img src="http://www.radio-unicc.de/fileadmin/templates/images/logo.png" alt="Logo von Radio UNiCC">
+						<!--<img src="http://www.radio-unicc.de/fileadmin/templates/images/logo.png" alt="Logo von Radio UNiCC">-->
+						<img src="icons/unicc-logo-bunt.svg" alt="Logo von Radio UNiCC">
 						einzig, nicht artig...
 					</a>
 				</div>
@@ -36,7 +38,7 @@
 		</header>
 
 		<!--Menüleiste-->
-		<nav class="layout center noselect">
+		<nav class="layout center noselect" role="menubar">
 			<div class="currentpage">
 				<a href="/">Home</a>
 			</div>
@@ -72,7 +74,7 @@
 					<li><a href="/" target="_blank">Team</a></li>
 				</ul>
 			</div>
-			<form method="GET" action="https://www.google.com/search">
+			<form method="GET" action="https://www.google.com/search" role="search">
 				<input type="hidden" name="sitesearch" value="radio-unicc.de">
 				<input name="q" type="search" placeholder="Suchen...">
 			</form>
@@ -81,10 +83,10 @@
 			</div>
 		</nav>
 
-        <main class="layout full"></main>
+        <main class="layout full" role="main"></main>
 
         <!--Fußzeile mit Copyright, Datenschutz, etc.-->
-		<footer class="layout full noselect">
+		<footer class="layout full noselect" role="banner">
 			<div class="layout center">
 				© <span id="year">{{current_year}}</span> Radio UNiCC | 
 				<a href="extra/impressum.html" target="_blank">Impressum</a> | 
@@ -98,38 +100,46 @@
 		</footer>
 		
 		<!--Audioplayer-->
-		<div id="player">
+		<div id="player" role="marquee">
 			<div id="player-play">
-				<input type="checkbox" id="play" autocomplete="off" onchange="change(this);">
+				<input type="checkbox" id="play" class="hide" autocomplete="off" onchange="startstop(this);">
 				<label for="play"></label>
 			</div>
-			<img src="">
+			<img class="song-cover" style="border-radius: 0.5rem;">
 			<div id="player-description">
-				<span class="song-title">TITEL</span><br>
+				<b class="song-title">TITEL</b><br>
 				<span class="song-artist">KÜNSTLER</span><br>
-				<span>die letzten 5 Lieder</span>
 			</div>
 			<div>
-				<audio id="audio"><!-- onplay="play_(this);" onpause="pause_(this);"-->
+				<input type="range" min="0" max="100" value="69" oninput="change_volume(this.value)" onchange="change_volume(this.value)">
+				<!--<progress max="100" value="42">42%</progress>-->
+			</div>
+			<input type="checkbox" id="history" class="hide" autocomplete="off">
+			<ol id="last_songs" class="shadow" role="log">
+				<li>Queens Of The Stone Age - In My Head</li>
+				<li>Color The Night - Hype</li>
+				<li>Cayucas - Jessica WJ</li>
+				<li>Gus Black - Waiting In The Cold</li>
+				<li>The Flames - A Night To Remember</li>
+			</ol>
+			<label for="history">
+				<img src="icons/history.svg" style="filter: invert();">
+			</label>
+			<div class="hide">
+				<audio id="audio" preload="none">
 					<b>F</b>. Dein Browser unterstützt das Audio-Tag nicht.
 				</audio>
-				<div id="abc" style="display: none;">
+				<!--
+				<div id="sourcelist" style="display: none;">
+					<source src="https://streams.ilovemusic.de/iloveradio1.mp3" type="audio/mpeg">
 					<source src="http://stream.radio-unicc.de:8000/unicc_xq.mp3" type="audio/mpeg">
 					<source src="http://stream.radio-unicc.de:8000/unicc_hq.mp3" type="audio/mpeg">
 					<source src="http://stream.radio-unicc.de:8000/unicc_hq.ogg" type="audio/ogg">
 					<source src="http://stream.radio-unicc.de:8000/unicc_mq.ogg" type="audio/ogg">
 					<source src="http://stream.radio-unicc.de:8000/unicc_lq.ogg" type="audio/ogg">
 					<b>F</b>. Dein Browser unterstützt das Audio-Tag nicht.
-				</div>
+				</div>-->
 			</div>
 		</div>
-		<script>
-			//TODO: Funktioniert noch nicht für dynamisch geladenen Content
-			//https://stackoverflow.com/questions/3219758/detect-changes-in-the-dom (jquery.initialize sieht echt gut aus)
-			document.querySelectorAll(".noselect").forEach(function(element) {
-				element.setAttribute("draggable", "false");
-				element.setAttribute("ondragstart", "return false");
-			});
-		</script>
 	</body>
 </html>

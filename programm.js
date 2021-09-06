@@ -9,4 +9,4 @@ function loadDate() {
     document.getElementById("sendeplan_datum").innerHTML = "< " + day_names[date.getDay()] + ", " + zeroPad(date.getDate(), 2) + "." + zeroPad(date.getMonth() + 1, 2) + ". >";
 }
 
-//document.addEventListener("DOMContentLoaded", loadDate);
+document.addEventListener("newDOMContentLoaded", loadDate);

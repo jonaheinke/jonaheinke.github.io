@@ -1,10 +1,11 @@
 div#player {
 	--player-height: 7rem;
+	--player-height-without-padding: calc(var(--player-height) - 2rem);
 
 	position: fixed;
 	z-index: 6;
 	left: 50vw;
-	bottom: 5vh;
+	bottom: 2rem;
 	transform: translateX(-50%);
 
 	display: flex;
@@ -13,10 +14,12 @@ div#player {
 
 	box-sizing: border-box;
 	max-width: 100vw;
-	width: 1000px;
+	width: 750px;
 	height: var(--player-height);
 	padding: 1rem;
-	background-color: var(--grey);
+	box-shadow: 0 0 10px 0 var(--grey-dark);
+	background-color: var(--blue-dark); /*var(--grey)*/
+	color: var(--blue-light);
 	border-radius: calc(var(--player-height) / 2);
 }
 
@@ -24,20 +27,26 @@ div#player {
 	div#player {
 		--player-height: 12rem;
 		bottom: 0;
+		width: 100vw;
 	}
 }
 
+div#player img {
+	height: var(--player-height-without-padding);
+}
+
 div#player-play {
-	--play-circle-height: calc(var(--player-height) - 2rem);
-	height: var(--play-circle-height);
-	width: var(--play-circle-height);
+	flex: 0 0 auto;
+	height: var(--player-height-without-padding);
+	width: var(--player-height-without-padding);
 	border-radius: 50%;
-	background-color: var(--white);
+	outline: 2px solid var(--grey-dark);
+	background-color: var(--blue-light); /*var(--white)*/
 }
 
 div#player-play label {
-	--play-button-height: calc(var(--play-circle-height) / 2);
-	--play-button-height-half: calc(var(--play-circle-height) / 4);
+	--play-button-height: calc(var(--player-height-without-padding) / 2);
+	--play-button-height-half: calc(var(--player-height-without-padding) / 4);
 	display: block;
 	position: relative;
 	height: 100%;
@@ -74,10 +83,13 @@ div#player-play input:checked + label:before {
 div#player-play label:after {
 	content: "";
 	position: absolute;
-	background-color: var(--white);
+	background-color: var(--blue-light); /*var(--white)*/
 	width: 0;
+	/* Original: zeigt manchmal eine einzelne Pixelreihe während der Transition, ist jedoch ein visueller Glitch, der nicht existieren sollte
 	height: var(--play-button-height);
-	top: var(--play-button-height-half);
+	top: var(--play-button-height-half);*/
+	height: calc(var(--player-height-without-padding) - 20px);
+	top: 10px;
 	left: calc(var(--play-button-height) / 3 + var(--play-button-height-half));
 	transition: width var(--fast-transition-duration) ease;
 }
@@ -86,14 +98,41 @@ div#player-play input:checked + label:after {
 	width: calc(var(--play-button-height) / 3);
 }
 
-div#player-play input {
-	display: none;
-}
-
 div#player-description {
-	
+	flex: 1 0 150px;
 }
 
-div#player-description .song-title {
-	font-weight: bolder;
+div#player ol {
+	position: absolute;
+	right: -100px;
+	z-index: -1;
+	/*box-sizing: border-box;*/
+	max-height: var(--player-height);
+	overflow-y: hidden;
+	font-size: smaller;
+	padding: 0.5rem;
+	padding-left: 1.5rem;
+	/*padding-left: 300px;*/
+
+	opacity: 0;
+	background-color: var(--grey-dark);
+
+	transition: all var(--slow-transition-duration) ease-out;
+}
+
+div#player input:checked + ol {
+	opacity: 1;
+	right: -300px;
+}
+
+@media (orientation: portrait) {
+	div#player ol {
+		right: 0;
+		top: 0;
+	}
+
+	div#player input:checked + ol {
+		right: 0;
+		top: calc(0px - var(--player-height));
+	}
 }
